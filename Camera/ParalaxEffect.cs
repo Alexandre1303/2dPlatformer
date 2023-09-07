@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ParalaxEffect : MonoBehaviour {
@@ -29,8 +26,6 @@ public class ParalaxEffect : MonoBehaviour {
             new(travelledDistance.x * parallaxSpeed.x, travelledDistance.y * parallaxSpeed.y);
         transform.position += distanceToTravel;
         lastCameraPos = cameraPosition.position;
-
-
         CalculateReposition();
     }
 

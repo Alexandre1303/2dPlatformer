@@ -1,20 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
-    
-    
+
     private Animator animator;
     private Rigidbody2D player;
-    private bool isColliding = false;
+
     [SerializeField] private AudioSource playerDeathSound;
     [SerializeField] private AudioSource playerHurt;
     [SerializeField] private float startingPlayerHP;
     [SerializeField] private float iDurantion;
     [SerializeField] private float numFlashes;
-    private readonly object lck = new object();
 
     public float CurrentHP { get; private set; }
    
@@ -65,8 +62,7 @@ public class PlayerHealth : MonoBehaviour {
         Physics2D.IgnoreLayerCollision(playerLayer, trapLayer, false);
     }
 
-    private void RestartLevel() {
-        Debug.Log("HEREEE");
+    private void RestartLevel() { 
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
